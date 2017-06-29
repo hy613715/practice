@@ -1,10 +1,43 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta charset="utf-8">
     <title>cookie</title>
 </head>
 <body>
+    <input type="text" id="setCookie">
+    <button id="saveCookie">保存</button>
+    <button id="getCookie">获取</button>
+    <script>
+        var setCookie = document.getElementById("setCookie"),
+            saveCookie = document.getElementById("saveCookie"),
+            getCookie = document.getElementById("getCookie");
 
+        cookFn = {
+            save: function(){
+                var _val = setCookie.value;//获取inuput中的值
+                //input 为空，打印出提示信息
+                if(!_val) {
+                    console.log("没有信息");
+                    return false;
+                }
+                //设置cookie
+                function setCookie(msg,_val,minute){
+                    var _date = new Date();
+                    var _minute = _date.getMinutes();//获取当前分钟数
+                    document.cookie = msg + "=" + escape(_val) + ((minute==null)?"":";expires=" + _minute + minute)
+                }
+            },
+            get: function(){
+
+            }
+        }
+        saveCookie.onclick = function(){
+           cookFn.save();
+        }
+        getCookie.onclick = function(){
+            cookFn.get();
+        }
+    </script>
 </body>
 </html>
