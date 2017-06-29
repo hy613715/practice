@@ -48,11 +48,13 @@
                 var dataName = localStorage.getItem("userName"),
                     dataTel = localStorage.getItem("userTel");
                 // 数据为空时，弹出提示
-                if(dataName==null||dataTel==null){
+                if(dataName==null || !dataTel==null){
                     alert("数据为空！");
                     return false;
                 }
                 alert("姓名：" + dataName + ";" + "电话：" + dataTel);
+                // 获取之后清除所有数据
+                localStorage.clear();
             }
         }
     </script>
