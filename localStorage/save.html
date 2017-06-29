@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>save</title>
+    <style>
+        *{margin:0;padding:0;}
+        .wrap{padding:10px;width:500px;border:1px solid #ddd;}
+        .btn-save{display: block;;width:120px;height:35px;line-height:35px;text-align:center;border:1px solid #ddd;}
+        .input-wrap{margin-bottom:10px;}
+        .input-wrap label{margin-right:10px;text-align:right;max-width:5em;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="input-wrap">
+            <label>姓名：</label>
+            <input type="text" id="msgName">
+        </div>
+        <div class="input-wrap">
+            <label>电话：</label>
+            <input type="text" id="msgTel">
+        </div>
+        <a href="javascript:;" class="btn-save" id="btnSave">保存</a>
+    </div>
+    <script>
+        window.onload = function(){
+            var btn = document.getElementById("btnSave"),
+                name= document.getElementById("msgName"),
+                tel = document.getElementById("msgTel");
+            // 保存数据
+            btn.onclick = function(){
+                //为空时，弹出提示信息
+                if(name.value==""||tel.value==""){
+                    alert("信息不对");
+                    return false;
+                }
+                // 名字保存在userName里面，电话保存在userTel里面
+                localStorage.setItem("userName",name.value);
+                localStorage.setItem("userTel",tel.value);
+                name.value = "";
+                tel.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
