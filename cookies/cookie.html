@@ -5,28 +5,34 @@
     <title>cookie</title>
 </head>
 <body>
-    <input type="text" id="setCookie">
+    <span>cookie名称：</span><input type="text" id="setCookieName">
+    <span>cookie值：</span><input type="text" id="setCookieValue">
     <button id="saveCookie">保存</button>
     <button id="getCookie">获取</button>
     <script>
-        var setCookie = document.getElementById("setCookie"),
+        var setCookieName = document.getElementById("setCookieName"),
+            setCookieValue = document.getElementById("setCookieValue"),
             saveCookie = document.getElementById("saveCookie"),
             getCookie = document.getElementById("getCookie");
 
         cookFn = {
             save: function(){
-                var _val = setCookie.value;//获取inuput中的值
-                //input 为空，打印出提示信息
-                if(!_val) {
-                    console.log("没有信息");
+                var cookieName = setCookieName.value,
+                    cookieValue = setCookieValue.value;//取input输入框中的值
+
+                if(cookieName == "" || cookieValue == ""){
+                    alert("请输入完整内容");
                     return false;
                 }
+
                 //设置cookie
-                function setCookie(msg,_val,minute){
-                    var _date = new Date();
-                    var _minute = _date.getMinutes();//获取当前分钟数
-                    document.cookie = msg + "=" + escape(_val) + ((minute==null)?"":";expires=" + _minute + minute)
+                function saveCookie(name,value) {
+                    document.cookie = name +"="+ value;//设置cookie,暂时只有名称和值，其他没有添加
                 }
+                //调用saveCookie函数，参数为填入输入框中的值
+                saveCookie(cookieName,cookieValue);
+                setCookieName.value = "";
+                setCookieValue.value = "";//cookie保存之后清空input
             },
             get: function(){
 
