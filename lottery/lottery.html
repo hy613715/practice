@@ -1,78 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    <meta charset="UTF-8">
     <title>转盘</title>
-    <style>
-        * {
-            padding: 0;
-            margin: 0
-        }
-
-        body {
-            text-align: center
-        }
-
-        .plate-container {
-            position: relative;
-            width: 465px;
-            height: 465px;
-            float: left;
-            margin-left: 100px;
-        }
-
-        .lottery-plate {
-            width: 465px;
-            height: 465px;
-            background: url(./images/plate-bg.png);
-            position: absolute;
-            top: 0;
-            left: 0
-        }
-
-        .plate-container div.lottery-btn-container {
-            width: 465px;
-            height: 465px;
-            position: absolute;
-            background: url(./images/plate-pointer.png);
-            cursor: pointer;
-        }
-        .lottery-card {
-            background: #f60;
-            float: left;
-            margin-top: 100px;
-            margin-left: 100px;
-            width: 365px;
-            height: 235px;
-            text-align: center;
-        }
-        .lottery-title {
-            font-size: 24px;
-            color: #fff;
-        }
-        .lottery-window {
-            height: 130px;
-            margin: 5px 0 10px;
-            overflow: hidden;
-        }
-        .lottery-list {
-            line-height: 26px;
-            color: #fff;
-            font-size: 14px;
-            text-align: left;
-        }
-        .lottery-list span {
-            margin-left: 60px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div class="plate-container">
         <div id="lotteryPlate" class="lottery-plate"></div>
-        <div id="lotteryBtn" class="lottery-btn-container" style="transform: rotate(26deg);"></div>
+        <div id="lotteryBtn" class="lottery-btn-container"></div>
     </div>
     <div class="lottery-card">
         <div class="lottery-title">中奖名单</div>
@@ -106,22 +42,20 @@
                     <span>77777</span>
                     <span>中奖了77777</span>
                 </li>
+                <li>
+                    <span>88888</span>
+                    <span>中奖了88888</span>
+                </li>
+                <li>
+                    <span>99999</span>
+                    <span>中奖了99999</span>
+                </li>
             </ul>
         </div>
-
     </div>
-
     <script src="./jquery-1.8.3.js"></script>
     <script src="./jQueryRotate.2.2.js"></script>
 
-    <!-- 抽奖时指针转动 -->
-    <script src="./rotate_btn.js"></script>
-
-    <!-- 中奖信息滚动 -->
-    <script src="./roll.js"></script>
-    <!-- 抽奖时转盘转动 -->
-    <!-- <script src="./rotate_plate.js"></script> -->
-
+    <script src="roll.js"></script>
 </body>
-
 </html>
