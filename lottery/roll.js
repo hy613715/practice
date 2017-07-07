@@ -5,7 +5,7 @@ $(function(){
     var rollUl = $('#rollAwardName'),
         rollLis = $('#rollAwardName li'),//打印出3个li
         topDefault = 0, //top的初始值
-        speed = 30, //滚动的速度
+        speed = 40, //滚动的速度
         card = $('.lottery-card'),
         timer = null;
 
@@ -24,7 +24,7 @@ $(function(){
         }
     }
     //true 表示开启定时器，flase表示清除定时器
-    hover(true);
+    hover(true); //默认开启定时器
     card.mouseover(function(){
         hover(false);
     });
