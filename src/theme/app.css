@@ -1,0 +1,9 @@
+.wrapper {
+    position: relative;
+}
+.container {
+    height: 100%;
+}
+.content {
+    padding: 25px;
+}
