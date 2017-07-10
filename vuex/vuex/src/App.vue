@@ -5,47 +5,16 @@
 </template>
 
 <script>
-    import Vue from 'vue'
-    import Vuex from 'vuex'
-    import Count from './components/Count.vue'
 
-    Vue.use(Vue)
-    Vue.use(Vuex)
-const store = new Vuex.Store({
-    state: {
-        count: 0
-    },
-    mutations: {
-        increment: state => state.count++,
-        decrement: state => state.count--
-    }
-})
+import Count from './components/Count.vue'
 
-new Vue({
-    el: '#app',
-    computed: {
-        count () {
-            return store.state.count
-        }
-    },
-    methods: {
-        increment () {
-        store.commit('increment')
-        },
-        decrement () {
-            store.commit('decrement')
-        }
-    }
-})
 export default {
+    name: 'app',
     components: {
-        'count': Count
+        'count' : Count
     }
 }
-
 </script>
-
 <style>
-
 
 </style>
