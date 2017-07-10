@@ -33,6 +33,7 @@ $(function(){
             $(this).rotate({
                 angle: 0,
                 animateTo:totalAngle,
+                duration: 6000,
                 callback: function(){
                     alert(awards[resultStop])
                 }
