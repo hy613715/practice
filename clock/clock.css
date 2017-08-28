@@ -1,0 +1,111 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.clock{
+    width: 300px;
+    height: 300px;
+    border:4px solid #000;
+    border-radius: 50%;
+    margin: 20px auto;
+    position: relative;
+}
+/*时钟数字*/
+#clock-num {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform: rotate(180deg);
+    transform-origin: center center;
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.num {
+    width: 24px;
+    line-height: 24px;
+    height: 24px;
+    text-align: center;
+    position: absolute;
+    font-size: 18px;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform: rotate(180deg);
+    transform-origin: center center;
+}
+/*时钟刻度*/
+#scale-box {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.scale {
+    width: 2px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -1px;
+    -webkit-transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    transform-origin: center bottom;
+}
+.scale-show {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    background: #000;
+}
+/*时钟中心点*/
+.clock-origin {
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    left: 50%;
+    margin-left: -10px;
+}
+/*指针*/
+.pointer-hour,
+.pointer-minute,
+.pointer-second {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    -webkit-transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    transform-origin: center bottom;
+}
+.pointer-hour{
+    width: 6px;
+    height: 80px;
+    background: #000;
+    margin-left: -3px;
+}
+/*分钟指针*/
+.pointer-minute {
+    width: 4px;
+    height: 100px;
+    background: #000;
+    margin-left: -2px;
+}
+/*秒针指针*/
+.pointer-second {
+    width: 2px;
+    height: 120px;
+    background: #000;
+    margin-left: -1px;
+}
